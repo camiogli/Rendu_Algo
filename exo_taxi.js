@@ -13,29 +13,34 @@ let personnaje = {
  let trajet = {
     changements: 0,
     radio: musics [0],
-    feuxrouges: 30,
+    feuxrestant: 30,
  }
 
+
  function takeTaxi(personnaje, trajet){
-    while (trajet.feuxrouges > 0) {
+    while (trajet.feuxrestant > 0) {
 
         let musicrand = Math.floor(Math.random()*musics.length)
         let musicplay = musics[musicrand]
 
         if (musicplay == trajet.radio) {
-            personnaje.health -1, 
-            trajet.changements ++; 
-            let feuxrestant = trajet.feuxrouges -1
-            console.log('musique à la radio: ' + musicplay + ', il manque ' + feuxrestant + ' feux rouges pour arrivé à la maison')  
-            continue
+            personnaje.health = personnaje.health -1, 
+            trajet.changements ++,
+            trajet.feuxrestant = trajet.feuxrestant -1
+            console.log('musique à la radio: ' + musicplay + ', il manque ' + trajet.feuxrestant + ' feux rouges pour arrivé à la maison')  
+        } else {
+            trajet.feuxrestant = trajet.feuxrestant -1
+            console.log('musique à la radio: ' + musicplay + ', il manque ' + trajet.feuxrestant + ' feux rouges pour arrivé à la maison') 
         }
-        if (personnaje.health == 0 && trajet.feuxrouges == 0) {
+        if (personnaje.health == 0) {
             console.log('AAAAAAAAAAAH *explosion*')
             break
               } 
-        if (personnaje.health > 0 && trajet.feuxrouges == 0) {
+        if (personnaje.health > 0 && trajet.feuxrestant == 0) {
             console.log(personnaje.name + ' est bien arrivé enfin! Il lui a fallu ' + trajet.changements + ' pour arrivé sain et sauf')
+        
         }
+        
     } 
 }
 

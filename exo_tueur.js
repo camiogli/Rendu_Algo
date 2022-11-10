@@ -1,4 +1,4 @@
-let killer = {
+/*let killer = {
     name: "RedJohn",
     hp: 100
 }
@@ -60,5 +60,10 @@ let prob = [
 
 
  while (killer.hp > 0 || survivor1 == prob.attack || survivor2 == prob.attack || survivor3 == prob.attack || survivor4 == prob.attack || survivor5 == prob.attack ) {
-    
- }
+    if (survivor1 == prob.dead || survivor2 == prob.dead || survivor3 == prob.dead || survivor4 == prob.dead || survivor5 == prob.dead) {
+      console.log()
+      continue
+    } else {
+      
+    }
+ }*/
