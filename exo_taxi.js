@@ -1,4 +1,4 @@
-let personnaje = { 
+/*let personnaje = { 
     name:'john',
     health:10,
  }
@@ -44,4 +44,4 @@ let personnaje = {
     } 
 }
 
-takeTaxi(personnaje, trajet)
+takeTaxi(personnaje, trajet)*/
